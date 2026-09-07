@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Paris-Africana International School</title>
+<meta name="description" content="Get in touch with Paris-Africana International School, Mararaba, Nasarawa State.">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Mararaba, Nasarawa State, Nigeria</span>
+    <div class="topbar-links">
+      <a href="tel:+2340000000000">+234 000 000 0000</a>
+      <a href="mailto:info@parisafricanaschool.ng">info@parisafricanaschool.ng</a>
+    </div>
+  </div>
+</div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Paris-Africana International School crest">
+      <span class="brand-text">
+        <span class="school-name">Paris-Africana International School</span>
+        <span class="school-motto">Knowledge and Discipline</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Apply Now</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+  </div>
+</div>
+
+<section>
+  <div class="container two-col" style="align-items:flex-start;">
+    <div>
+      <div class="section-head">
+        <h2>Send us a message</h2>
+        <p>Fill in the form and we'll get back to you within one working day.</p>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="full">
+            <label for="phone">Phone Number (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="+234...">
+          </div>
+          <div class="full">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>General Inquiry</option>
+              <option>Admissions</option>
+              <option>Book a Campus Visit</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:20px;">Send Message</button>
+
+        <p class="form-note">This form doesn't send anywhere yet — it's front-end only. Once the Node/Express backend is built, submitting this form will actually email the school office.</p>
+        <div class="form-success" id="form-success">Thanks! Your message has been received (demo only — no email was actually sent yet).</div>
+      </form>
+    </div>
+
+    <div>
+      <div class="section-head">
+        <h2>Visit or reach us</h2>
+      </div>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <span class="mark">📍</span>
+          <div>
+            <h3>Address</h3>
+            <p>Plot 9, Sanni Abacha Road, Mararaba, Nasarawa State, Nigeria</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="mark">📞</span>
+          <div>
+            <h3>Phone</h3>
+            <p>+234 000 000 0000</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="mark">✉️</span>
+          <div>
+            <h3>Email</h3>
+            <p>info@parisafricanaschool.ng</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <span class="mark">🕐</span>
+          <div>
+            <h3>Office Hours</h3>
+            <p>Monday – Friday, 8:00 AM – 4:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe
+          title="Map showing Mararaba, Nasarawa State"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=7.5195%2C8.9759%2C7.5795%2C9.0159&layer=mapnik"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p style="font-size:0.82rem; color:var(--ink-soft); margin-top:8px;">Map centered on Mararaba, Nasarawa State — update the coordinates in contact.html once you have the exact plot location.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="images/logo.png" alt="School crest">
+          <span class="school-name">Paris-Africana<br>International School</span>
+        </div>
+        <p>Knowledge and Discipline — a Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Admissions</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Book a Visit</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Plot 9, Sanni Abacha Road,<br>Mararaba, Nasarawa State</p>
+        <p>+234 000 000 0000<br>info@parisafricanaschool.ng</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Paris-Africana International School. All rights reserved.</span>
+      <span>Built by a student, for the school.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
