@@ -109,7 +109,7 @@ section { padding: 72px 0; }
   background: var(--brown);
   color: #fff;
 }
-.btn-primary:hover { background: var(--brown-dark); }
+.btn-primary:hover { background: var(--brown-dark); color: #fff; }
 
 .btn-outline {
   background: transparent;
@@ -182,8 +182,8 @@ section { padding: 72px 0; }
   border-bottom: 2px solid transparent;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover:not(.btn),
+.nav-links a.active:not(.btn) {
   color: var(--brown-dark);
   border-color: var(--brown);
 }
