@@ -1,19 +1,17 @@
 /* =========================================================
    PARIS-AFRICANA INTERNATIONAL SCHOOL — MAIN STYLESHEET
    Palette pulled directly from the crest's dark and light
-   brown tones. Variable names are unchanged from the previous
-   version — only the hex values move to a single brown family,
-   so every rule elsewhere in this file still works as-is.
+   brown tones. The palette uses descriptive names so future edits remain easy to understand.
    ========================================================= */
 
 :root {
   /* --- Brand colors (brown family, from the crest) --- */
   --brown: #8B5E3C;        /* medium brown — primary accent/buttons */
   --brown-dark: #3E2415;   /* dark brown — hover states, deep accents */
-  --green: #B08968;        /* light brown — was green, now a lighter brown tone */
-  --green-dark: #6B4226;   /* deeper brown — was green-dark */
-  --purple: #A9784F;       /* mid-light brown — was purple, kept distinct for hierarchy */
-  --amber: #D9B589;        /* pale tan — was amber, now a light accent brown */
+  --brown-light: #B08968;        /* light brown — was green, now a lighter brown tone */
+  --brown-mid-dark: #6B4226;   /* deeper brown — was green-dark */
+  --brown-mid: #A9784F;       /* mid-light brown — was purple, kept distinct for hierarchy */
+  --tan: #D9B589;        /* pale tan — was amber, now a light accent brown */
   --dark: #2E1B12;         /* darkest brown — replaces pure black */
 
   /* --- Neutrals --- */
@@ -319,8 +317,8 @@ section { padding: 72px 0; }
   border-radius: 2px;
   padding: 30px 26px;
 }
-.panel:nth-child(2) { border-left-color: var(--green); }
-.panel:nth-child(3) { border-left-color: var(--purple); }
+.panel:nth-child(2) { border-left-color: var(--brown-light); }
+.panel:nth-child(3) { border-left-color: var(--brown-mid); }
 .panel h3 { margin-bottom: 10px; }
 .panel p { font-size: 0.95rem; margin: 0; }
 .panel .glyph {
@@ -369,8 +367,8 @@ section { padding: 72px 0; }
   margin-bottom: 18px;
 }
 .stage:nth-child(1) .stage-num { background: var(--brown); }
-.stage:nth-child(2) .stage-num { background: var(--green); }
-.stage:nth-child(3) .stage-num { background: var(--purple); }
+.stage:nth-child(2) .stage-num { background: var(--brown-light); }
+.stage:nth-child(3) .stage-num { background: var(--brown-mid); }
 .stage h3 { margin-bottom: 8px; }
 .stage p { font-size: 0.94rem; }
 
@@ -409,13 +407,13 @@ section { padding: 72px 0; }
 .news-card p { font-size: 0.92rem; margin-bottom: 0; }
 
 /* thumb color rotation */
-.thumb-1 { background: linear-gradient(135deg, var(--brown), var(--purple)); }
-.thumb-2 { background: linear-gradient(135deg, var(--green), var(--dark)); }
-.thumb-3 { background: linear-gradient(135deg, var(--amber), var(--brown-dark)); }
+.thumb-1 { background: linear-gradient(135deg, var(--brown), var(--brown-mid)); }
+.thumb-2 { background: linear-gradient(135deg, var(--brown-light), var(--dark)); }
+.thumb-3 { background: linear-gradient(135deg, var(--tan), var(--brown-dark)); }
 
 /* ---------- CTA banner ---------- */
 .cta-banner {
-  background: var(--green);
+  background: var(--brown-light);
   color: #fff;
   text-align: left;
 }
@@ -514,7 +512,7 @@ section { padding: 72px 0; }
   font-size: 0.88rem;
   padding: 16px 18px;
   background: var(--cream);
-  border-left: 4px solid var(--amber);
+  border-left: 4px solid var(--tan);
 }
 
 /* ---------- Forms ---------- */
@@ -559,8 +557,8 @@ textarea { resize: vertical; min-height: 120px; }
   margin-top: 16px;
   padding: 14px 16px;
   background: #F0E6D8;
-  border-left: 4px solid var(--green);
-  color: var(--green-dark);
+  border-left: 4px solid var(--brown-light);
+  color: var(--brown-mid-dark);
   font-size: 0.92rem;
 }
 
@@ -659,3 +657,319 @@ footer p { color: rgba(255,255,255,0.72); font-size: 0.9rem; }
   .footer-grid { grid-template-columns: 1fr; }
   .stat-strip .container { justify-content: flex-start; }
 }
+
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 3px solid var(--tan);
+  outline-offset: 3px;
+}
+
+.align-start { align-items: flex-start; }
+.text-spaced { margin-top: 14px; }
+.form-submit { margin-top: 20px; }
+.map-link { color: var(--brown-dark); text-decoration: underline; }
+
+/* ---------- Narrow-phone refinements ---------- */
+@media (max-width: 400px) {
+  .container { padding-left: 16px; padding-right: 16px; }
+  .brand img { width: 44px; height: 44px; }
+  .brand-text .school-name { font-size: 0.92rem; }
+  .brand-text .school-motto { font-size: 0.62rem; }
+  .nav-toggle { width: 42px; height: 42px; }
+}
+
+/* =========================================================
+   FRONTEND ENHANCEMENT PASS
+   ========================================================= */
+:root {
+  --shadow-sm: 0 8px 24px rgba(46, 27, 18, 0.07);
+  --shadow-md: 0 18px 48px rgba(46, 27, 18, 0.12);
+  --radius-md: 12px;
+}
+
+html { scroll-padding-top: 92px; }
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 1000;
+  background: var(--dark);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.skip-link:focus { top: 0; }
+
+.navbar { box-shadow: 0 4px 20px rgba(46,27,18,0.04); }
+.nav-links .btn { border-bottom: 0; padding: 11px 20px; }
+.nav-links .btn:hover { border-color: transparent; }
+
+.hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(217,181,137,0.20), transparent 28%),
+    radial-gradient(circle at 12% 82%, rgba(139,94,60,0.25), transparent 34%),
+    var(--dark);
+}
+.hero .container { min-height: 570px; }
+.hero-copy { animation: fade-up 0.7s ease both; }
+.hero-copy h1 { max-width: 760px; }
+.hero-copy .accent { position: relative; white-space: nowrap; }
+.hero-copy .accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 3px;
+  background: var(--tan);
+  opacity: .75;
+}
+.hero-actions .btn { min-width: 142px; justify-content: center; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stat-strip { box-shadow: 0 12px 28px rgba(46,27,18,0.10); position: relative; z-index: 3; }
+.stat-strip .stat { flex: 1 1 260px; }
+
+.panel, .news-card, .feature-card, .step-card, .admissions-callout, .admissions-panel {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.panel:hover, .news-card:hover, .feature-card:hover, .step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.section-head-row {
+  max-width: none;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.section-head-row > div { max-width: 640px; }
+.text-link, .card-link {
+  color: var(--brown-dark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.text-link:hover, .card-link:hover { text-decoration: underline; }
+.card-link { display: inline-flex; gap: 7px; margin-top: 16px; font-size: .9rem; }
+
+.news-card { box-shadow: var(--shadow-sm); }
+.news-card .thumb { position: relative; overflow: hidden; }
+.news-card .thumb::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(255,255,255,.22);
+  transform: rotate(-4deg);
+}
+.news-card .thumb span { position: relative; z-index: 1; letter-spacing: .04em; text-transform: uppercase; }
+.news-card-featured { box-shadow: var(--shadow-md); }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.feature-card {
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: var(--radius-md);
+}
+.feature-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--dark);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.feature-card:nth-child(2) .feature-icon { background: var(--brown); }
+.feature-card:nth-child(3) .feature-icon { background: var(--brown-mid); }
+.feature-card:nth-child(4) .feature-icon { background: var(--brown-light); color: var(--dark); }
+.feature-card h3 { margin-bottom: 9px; }
+.feature-card p { font-size: .92rem; }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.step-card {
+  position: relative;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  box-shadow: var(--shadow-sm);
+}
+.step-card > span:first-child {
+  display: inline-block;
+  color: var(--brown);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-bottom: 18px;
+}
+.step-card h3 { margin-bottom: 9px; }
+.step-card p { font-size: .93rem; }
+
+.cta-banner { position: relative; overflow: hidden; }
+.cta-banner::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 50%;
+  right: -80px;
+  top: -100px;
+}
+.cta-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.btn-light { background: #fff; color: var(--dark); border-color: #fff; }
+.btn-light:hover { background: var(--cream); color: var(--dark); }
+
+/* Gallery is deliberately content-safe until real school photos are supplied. */
+.gallery-grid { gap: 18px; }
+.gallery-item {
+  min-height: 220px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(46,27,18,.12);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  isolation: isolate;
+}
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 25%, rgba(46,27,18,.75));
+  z-index: -1;
+}
+.gallery-item h3, .gallery-item p { color: #fff; }
+.gallery-item p { font-size: .86rem; color: rgba(255,255,255,.78); margin-top: 4px; }
+.gallery-tone-1 { background: linear-gradient(135deg, #7A4E2D, #3E2415); }
+.gallery-tone-2 { background: linear-gradient(135deg, #6B4226, #2E1B12); }
+.gallery-tone-3 { background: linear-gradient(135deg, #D9B589, #8B5E3C); }
+.gallery-tone-4 { background: linear-gradient(135deg, #A9784F, #3E2415); }
+.gallery-tone-5 { background: linear-gradient(135deg, #3E2415, #6B4226); }
+.gallery-tone-6 { background: linear-gradient(135deg, #B08968, #5A3A20); }
+.gallery-note {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--brown);
+  background: var(--cream);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* Admissions */
+.admissions-intro { display: grid; grid-template-columns: 1.3fr .7fr; gap: 36px; align-items: stretch; }
+.admissions-callout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 26px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.admissions-callout h3 { margin-bottom: 7px; }
+.admissions-callout p { font-size: .91rem; }
+.admissions-steps { margin-top: 20px; }
+.admissions-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 34px;
+  box-shadow: var(--shadow-sm);
+}
+.admissions-panel .eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--brown);
+  font-size: .75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.admissions-panel h2 { margin-bottom: 12px; }
+.contact-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+.check-list { display: grid; gap: 14px; }
+.check-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--ink); }
+.check-list span {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--brown);
+  color: #fff;
+  flex: 0 0 24px;
+  font-weight: 700;
+}
+
+/* Footer refinements */
+footer { position: relative; }
+.footer-grid > div:first-child p { max-width: 34ch; }
+.footer-links a { transition: color .15s ease, padding-left .15s ease; }
+.footer-links a:hover { padding-left: 3px; }
+
+@media (max-width: 1050px) {
+  .nav-links { gap: 18px; }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .admissions-intro { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .hero .container { min-height: auto; }
+  .section-head-row { align-items: flex-start; flex-direction: column; }
+  .steps-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  section { padding: 56px 0; }
+  .hero .container { padding-top: 56px; padding-bottom: 60px; }
+  .hero-medallion { margin-bottom: 8px; }
+  .hero-actions .btn { flex: 1 1 150px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .stat-strip .stat { flex-basis: 100%; }
+  .section-head { margin-bottom: 32px; }
+  .admissions-panel { padding: 26px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: clamp(2rem, 11vw, 2.65rem); }
+  .hero-copy .accent { white-space: normal; }
+  .hero-actions .btn { width: 100%; }
+  .gallery-item { min-height: 190px; }
+  .cta-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .hero-copy { animation: none; }
+}
+
+.crest-on-light { background: #fff; border-radius: 50%; padding: 8px; }
+.map-caption { font-size: .82rem; color: var(--ink-soft); margin-top: 8px; }
+.inline-link { color: var(--brown-dark); text-decoration: underline; }
+.value-list-single { grid-template-columns: 1fr; }

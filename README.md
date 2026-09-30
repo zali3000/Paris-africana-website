@@ -11,8 +11,8 @@ paris-africana-website/
 ├── index.html          Home page
 ├── about.html           About page
 ├── academics.html       Academics page
-├── gallery.html         Photo gallery (placeholder tiles for now)
-├── news.html            News & announcements (sample posts for now)
+├── gallery.html         Photo gallery (placeholder tiles until real photos are added)
+├── news.html            News & announcements (sample content until replaced)
 ├── contact.html         Contact form + map
 ├── css/
 │   └── style.css        All styles (design tokens at the top)
@@ -32,16 +32,17 @@ paris-africana-website/
    (Don't just double-click `index.html` to open it as a `file://` path — it will
    look fine, but later, once we add pages that fetch data, that won't work over `file://`.)
 
+### Current contact-form behavior
+
+The contact form currently validates the required fields and prepares a `mailto:` draft to `parisafrica.edu.ng@yahoo.com`. It does **not** submit directly to a server yet. When the backend is added, replace this mail-draft flow with a real API submission.
+
 ## 2. Things to personalize before going live
 
-- **Phone / email**: replace `+234 000 000 0000` and `info@parisafricanaschool.ng`
-  everywhere (search-and-replace across all `.html` files).
+- **Phone / email**: the current published contact details are already filled in. Confirm them before launch and search-and-replace across all `.html` files if they change.
 - **Address / map**: confirm the exact plot address and update the `iframe` src
   in `contact.html` with the correct coordinates (currently centered on Mararaba).
-- **Social links**: the Facebook/Instagram icons in the footer are `href="#"`
-  placeholders — point them to your real pages.
-- **News posts**: `news.html` and the homepage news section have sample
-  announcements — replace with real ones.
+- **Social links**: Facebook and Instagram currently point to the supplied school profiles. Confirm the profiles before launch.
+- **News posts**: `news.html` and the homepage news section contain clearly marked development/sample content. Replace these with verified school announcements before launch.
 - **Gallery photos**: `gallery.html` currently shows colored placeholder tiles.
   To use a real photo, put the image file in `images/gallery/` and replace a
   `.gallery-item` block with:
@@ -101,3 +102,17 @@ For those, the plan is:
   GitHub Pages can't run Node.js.
 
 Come back and we'll build that next, on top of this frontend.
+
+## Frontend enhancement pass
+
+This version adds:
+- a dedicated Admissions page;
+- improved homepage conversion sections;
+- accessible skip navigation and stronger responsive behavior;
+- improved mobile navigation and reduced-motion support;
+- SEO/social metadata and EducationalOrganization structured data;
+- content-ready News and Gallery presentation without inventing official school announcements;
+- `robots.txt` for deployment;
+- cleaner visual cards, CTAs, and responsive layouts.
+
+The News and Gallery areas are intentionally ready for real school content. They should be connected to the backend/admin system in the next phase rather than populated with invented school events or statistics.

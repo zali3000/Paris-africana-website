@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us | Paris-Africana International School</title>
-<meta name="description" content="Learn about the history, mission, and values of Paris-Africana International School in Mararaba, Nasarawa State.">
+<title>About Paris-Africana International School</title>
+<meta name="description" content="Discover the story, mission, vision, motto, and values of Paris-Africana International School in Mararaba, Nasarawa State.">
 <link rel="icon" href="images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#3E2415">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Paris-Africana International School">
+<meta property="og:description" content="Discover the story, mission, vision, motto, and values of Paris-Africana International School in Mararaba, Nasarawa State.">
+<meta property="og:image" content="images/logo.png">
+<link rel="canonical" href="about.html">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="topbar">
   <div class="container">
@@ -31,21 +38,23 @@
         <span class="school-motto">Knowledge and Discipline</span>
       </span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="main-navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="gallery.html">Gallery</a>
       <a href="news.html">News</a>
       <a href="contact.html">Contact</a>
+      <a href="admissions.html">Admissions</a>
       <a href="contact.html" class="btn btn-primary">Apply Now</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<main id="main-content">
 <div class="page-header">
   <div class="container">
     <h1>About Paris-Africana</h1>
@@ -60,7 +69,7 @@
         <h2>Our story</h2>
       </div>
       <p>Paris-Africana International School was established in 2016 in Mararaba, Nasarawa State, with a clear purpose: to raise pupils who are both academically sound and firmly grounded in good character.</p>
-      <p style="margin-top:14px;">The name on our crest reflects that purpose — the Eiffel Tower for an international standard of learning, and the map of Africa for the identity and discipline we build that standard on. Since our founding, we have grown from a small Nursery unit into a full Nursery-to-Secondary school.</p>
+      <p class="text-spaced">The name on our crest reflects that purpose — the Eiffel Tower for an international standard of learning, and the map of Africa for the identity and discipline we build that standard on. Since our founding, we have grown from a small Nursery unit into a full Nursery-to-Secondary school.</p>
       <div class="tag-strip">
         <span class="tag">Est. 2016</span>
         <span class="tag">Mararaba, Nasarawa State</span>
@@ -69,7 +78,7 @@
     </div>
     <div class="hero-medallion">
       <div class="ring r1"></div>
-      <img src="images/logo.png" alt="School crest medallion" style="background:#fff;">
+      <img src="images/logo.png" alt="School crest medallion" class="crest-on-light">
     </div>
   </div>
 </section>
@@ -148,6 +157,8 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -158,8 +169,8 @@
         </div>
         <p>Knowledge and Discipline — a Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank">f</a>
-          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank">ig</a>
+          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
         </div>
       </div>
       <div>
@@ -174,6 +185,7 @@
       <div>
         <h4>Admissions</h4>
         <ul class="footer-links">
+          <li><a href="admissions.html">Admissions</a></li>
           <li><a href="contact.html">Book a Visit</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

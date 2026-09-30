@@ -3,14 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paris-Africana International School | Home</title>
-<meta name="description" content="Paris-Africana International School, Mararaba, Nasarawa State — Knowledge and Discipline. Nursery, Primary and Secondary education.">
+<title>Paris-Africana International School | Knowledge and Discipline</title>
+<meta name="description" content="A Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria, focused on knowledge, discipline, character, and an international outlook.">
 <link rel="icon" href="images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#3E2415">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paris-Africana International School | Knowledge and Discipline">
+<meta property="og:description" content="A Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria, focused on knowledge, discipline, character, and an international outlook.">
+<meta property="og:image" content="images/logo.png">
+<link rel="canonical" href="index.html">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Paris-Africana International School",
+  "description": "Paris-Africana International School in Mararaba, Nasarawa State, Nigeria.",
+  "telephone": "+2348166351574",
+  "email": "parisafrica.edu.ng@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No 5 Paris Africana Street, Off Tanko Al-Makura Road, Via Sani Abacha Road",
+    "addressLocality": "Mararaba",
+    "addressRegion": "Nasarawa State",
+    "addressCountry": "NG"
+  }
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="topbar">
   <div class="container">
@@ -31,7 +55,7 @@
         <span class="school-motto">Knowledge and Discipline</span>
       </span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="main-navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
@@ -40,12 +64,13 @@
       <a href="contact.html">Contact</a>
       <a href="contact.html" class="btn btn-primary">Apply Now</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<main id="main-content">
 <section class="hero">
   <div class="container">
     <div class="hero-copy">
@@ -144,35 +169,70 @@
 
 <section>
   <div class="container">
-    <div class="section-head">
-      <h2>From the school</h2>
-      <p>Announcements and happenings around campus.</p>
+    <div class="section-head section-head-row">
+      <div>
+        <h2>From the school</h2>
+        <p>Announcements and happenings around campus.</p>
+      </div>
+      <a href="news.html" class="text-link">View all updates <span aria-hidden="true">→</span></a>
     </div>
     <div class="news-grid">
-      <article class="news-card">
-        <div class="thumb thumb-1">Resumption Notice</div>
+      <article class="news-card news-card-featured">
+        <div class="thumb thumb-1"><span>School updates</span></div>
         <div class="body">
-          <span class="date">Sample post — edit in news.html</span>
-          <h3>New term resumption date announced</h3>
-          <p>Replace this with your school's real announcement once the site goes live.</p>
+          <span class="date">Latest announcements</span>
+          <h3>Keep up with school news</h3>
+          <p>The news area is ready for official school announcements, term notices, events, and important updates.</p>
+          <a class="card-link" href="news.html">Open news &amp; announcements <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="news-card">
-        <div class="thumb thumb-2">Inter-House Sports</div>
+        <div class="thumb thumb-2"><span>Events</span></div>
         <div class="body">
-          <span class="date">Sample post — edit in news.html</span>
-          <h3>Inter-house sports competition</h3>
-          <p>Replace this with your school's real announcement once the site goes live.</p>
+          <span class="date">Coming soon</span>
+          <h3>School events</h3>
+          <p>Important school activities and dates can be published here once the school calendar is connected.</p>
+          <a class="card-link" href="contact.html">Ask the school office <span aria-hidden="true">→</span></a>
         </div>
       </article>
       <article class="news-card">
-        <div class="thumb thumb-3">Admissions</div>
+        <div class="thumb thumb-3"><span>Admissions</span></div>
         <div class="body">
-          <span class="date">Sample post — edit in news.html</span>
-          <h3>Admission forms now available</h3>
-          <p>Replace this with your school's real announcement once the site goes live.</p>
+          <span class="date">Admissions enquiries</span>
+          <h3>Start your enquiry</h3>
+          <p>Contact the school to ask about current requirements, availability, fees, and the admissions process.</p>
+          <a class="card-link" href="admissions.html">Explore admissions <span aria-hidden="true">→</span></a>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-cream">
+  <div class="container">
+    <div class="section-head">
+      <h2>Why families choose Paris-Africana</h2>
+      <p>A clear educational foundation, a disciplined environment, and an outlook that prepares pupils for a wider world.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card"><span class="feature-icon">01</span><h3>Strong foundations</h3><p>Early learning, literacy, numeracy, and core knowledge are treated as the foundation for everything that follows.</p></article>
+      <article class="feature-card"><span class="feature-icon">02</span><h3>Character matters</h3><p>Respect, punctuality, responsibility, and good conduct are part of the school experience—not an afterthought.</p></article>
+      <article class="feature-card"><span class="feature-icon">03</span><h3>Whole-child growth</h3><p>Academic learning is complemented by leadership, social development, creativity, and extracurricular opportunities.</p></article>
+      <article class="feature-card"><span class="feature-icon">04</span><h3>International outlook</h3><p>The school's identity combines African heritage with a confident outlook toward wider academic and social opportunities.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div><h2>Getting started</h2><p>For families considering the school, the first step is simply to start a conversation.</p></div>
+      <a href="admissions.html" class="text-link">Admissions guide <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><span>01</span><h3>Make an enquiry</h3><p>Contact the school office with your questions about your child's level, availability, and current admissions information.</p></div>
+      <div class="step-card"><span>02</span><h3>Arrange a visit</h3><p>Use the contact page to request a campus visit and speak with the school office about the next steps.</p></div>
+      <div class="step-card"><span>03</span><h3>Request current requirements</h3><p>Requirements, fees, dates, and available places can change, so confirm the current details directly with the school.</p></div>
     </div>
   </div>
 </section>
@@ -183,9 +243,11 @@
       <h2>Ready to see the campus for yourself?</h2>
       <p>Schedule a visit or send us your questions — we reply within one working day.</p>
     </div>
-    <a href="contact.html" class="btn btn-outline-light">Contact the School</a>
+    <div class="cta-actions"><a href="admissions.html" class="btn btn-light">Explore Admissions</a><a href="contact.html" class="btn btn-outline-light">Contact the School</a></div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container">
@@ -197,8 +259,8 @@
         </div>
         <p>Knowledge and Discipline — a Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank">f</a>
-          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank">ig</a>
+          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
         </div>
       </div>
       <div>
@@ -213,6 +275,7 @@
       <div>
         <h4>Admissions</h4>
         <ul class="footer-links">
+          <li><a href="admissions.html">Admissions</a></li>
           <li><a href="contact.html">Book a Visit</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

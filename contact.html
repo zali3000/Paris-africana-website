@@ -3,14 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Paris-Africana International School</title>
-<meta name="description" content="Get in touch with Paris-Africana International School, Mararaba, Nasarawa State.">
+<title>Contact &amp; Admissions | Paris-Africana International School</title>
+<meta name="description" content="Contact Paris-Africana International School in Mararaba, Nasarawa State, or enquire about admissions and campus visits.">
 <link rel="icon" href="images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#3E2415">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact &amp; Admissions | Paris-Africana International School">
+<meta property="og:description" content="Contact Paris-Africana International School in Mararaba, Nasarawa State, or enquire about admissions and campus visits.">
+<meta property="og:image" content="images/logo.png">
+<link rel="canonical" href="contact.html">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="topbar">
   <div class="container">
@@ -31,21 +38,23 @@
         <span class="school-motto">Knowledge and Discipline</span>
       </span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="main-navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="gallery.html">Gallery</a>
       <a href="news.html">News</a>
       <a href="contact.html">Contact</a>
+      <a href="admissions.html">Admissions</a>
       <a href="contact.html" class="btn btn-primary">Apply Now</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<main id="main-content">
 <div class="page-header">
   <div class="container">
     <h1>Contact Us</h1>
@@ -54,14 +63,14 @@
 </div>
 
 <section>
-  <div class="container two-col" style="align-items:flex-start;">
+  <div class="container two-col align-start">
     <div>
       <div class="section-head">
         <h2>Send us a message</h2>
-        <p>Fill in the form and we'll get back to you within one working day.</p>
+        <p>Fill in the form and your email app will open with the message prepared for the school office.</p>
       </div>
 
-      <form id="contact-form" novalidate>
+      <form id="contact-form">
         <div class="form-grid">
           <div>
             <label for="name">Full Name</label>
@@ -89,10 +98,10 @@
             <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-top:20px;">Send Message</button>
+        <button type="submit" class="btn btn-primary form-submit">Send Message</button>
 
-        <p class="form-note">This form doesn't send anywhere yet — it's front-end only. Once the Node/Express backend is built, submitting this form will actually email the school office.</p>
-        <div class="form-success" id="form-success">Thanks! Your message has been received (demo only — no email was actually sent yet).</div>
+        <p class="form-note">This version prepares an email using your device's email app. A direct online submission system can be connected when the backend is added.</p>
+        <div class="form-success" id="form-success" role="status" aria-live="polite">Your email draft has been prepared. Please review it and send it from your email app.</div>
       </form>
     </div>
 
@@ -138,12 +147,14 @@
           loading="lazy">
         </iframe>
       </div>
-      <p style="font-size:0.82rem; color:var(--ink-soft); margin-top:8px;">
-        <a href="https://www.google.com/maps?q=9.025175,7.591381" target="_blank" style="color:var(--brown-dark); text-decoration:underline;">Get Directions on Google Maps</a>
+      <p class="map-caption">
+        <a href="https://www.google.com/maps?q=9.025175,7.591381" target="_blank" rel="noopener noreferrer" class="map-link">Get Directions on Google Maps</a>
       </p>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container">
@@ -155,8 +166,8 @@
         </div>
         <p>Knowledge and Discipline — a Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank">f</a>
-          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank">ig</a>
+          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
         </div>
       </div>
       <div>
@@ -171,6 +182,7 @@
       <div>
         <h4>Admissions</h4>
         <ul class="footer-links">
+          <li><a href="admissions.html">Admissions</a></li>
           <li><a href="contact.html">Book a Visit</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>

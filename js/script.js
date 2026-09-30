@@ -9,24 +9,43 @@ document.addEventListener("DOMContentLoaded", function () {
   var links = document.querySelector(".nav-links");
 
   if (toggle && links) {
+    var setMenuState = function (open) {
+      links.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    };
+
+    setMenuState(false);
+
     toggle.addEventListener("click", function () {
-      links.classList.toggle("open");
+      setMenuState(!links.classList.contains("open"));
     });
 
-    /* close menu when a link is tapped (mobile) */
     links.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        links.classList.remove("open");
+        setMenuState(false);
       });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && links.classList.contains("open")) {
+        setMenuState(false);
+        toggle.focus();
+      }
     });
   }
 
-  /* ---- Highlight the current page in the nav ---- */
-  var currentPage = window.location.pathname.split("/").pop() || "index.html";
+  /* ---- Highlight the current page in the nav ----
+     Works both on normal hosting and GitHub Pages repository URLs. */
+  var path = window.location.pathname;
+  var currentPage = path.endsWith("/") ? "index.html" : path.split("/").pop();
+  if (!currentPage || currentPage === "") currentPage = "index.html";
+
   document.querySelectorAll(".nav-links a").forEach(function (link) {
     var href = link.getAttribute("href");
-    if (href === currentPage) {
+    if (href && href.split("/").pop() === currentPage && !link.classList.contains("btn")) {
       link.classList.add("active");
+      link.setAttribute("aria-current", "page");
     }
   });
 
@@ -36,39 +55,54 @@ document.addEventListener("DOMContentLoaded", function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  /* ---- Contact form (front-end only for now) ----
-     There is no backend yet, so this just validates the
-     fields and shows a success message. Once the Node/Express
-     backend is added, replace the code inside the submit
-     handler with a fetch() POST request to your API. */
+  /* ---- Contact form ----
+     No backend is connected yet. Instead of falsely reporting a
+     successful server submission, prepare a mailto draft for the
+     school's published email address. */
   var contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       var successBox = document.getElementById("form-success");
-      var name = document.getElementById("name").value.trim();
-      var email = document.getElementById("email").value.trim();
-      var message = document.getElementById("message").value.trim();
+      var nameEl = document.getElementById("name");
+      var emailEl = document.getElementById("email");
+      var phoneEl = document.getElementById("phone");
+      var subjectEl = document.getElementById("subject");
+      var messageEl = document.getElementById("message");
+
+      if (!nameEl || !emailEl || !messageEl) return;
+
+      var name = nameEl.value.trim();
+      var email = emailEl.value.trim();
+      var phone = phoneEl ? phoneEl.value.trim() : "";
+      var subject = subjectEl ? subjectEl.value.trim() : "General Inquiry";
+      var message = messageEl.value.trim();
 
       if (!name || !email || !message) {
-        alert("Please fill in your name, email, and message before sending.");
+        alert("Please fill in your name, email, and message before continuing.");
         return;
       }
 
-      /* --- Placeholder behavior until the backend exists ---
-         When the backend is ready, swap this block for:
+      if (!emailEl.checkValidity()) {
+        emailEl.reportValidity();
+        return;
+      }
 
-         fetch("/api/contact", {
-           method: "POST",
-           headers: { "Content-Type": "application/json" },
-           body: JSON.stringify({ name, email, message })
-         })
-         .then(res => res.json())
-         .then(() => { contactForm.reset(); successBox.style.display = "block"; })
-         .catch(() => alert("Something went wrong. Please try again."));
-      */
-      contactForm.reset();
+      var body = [
+        "Name: " + name,
+        "Email: " + email,
+        phone ? "Phone: " + phone : "",
+        "",
+        message
+      ].filter(Boolean).join("\n");
+
+      var mailto = "mailto:parisafrica.edu.ng@yahoo.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+
       if (successBox) {
         successBox.style.display = "block";
         successBox.scrollIntoView({ behavior: "smooth", block: "nearest" });

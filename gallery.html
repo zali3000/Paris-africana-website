@@ -4,13 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | Paris-Africana International School</title>
-<meta name="description" content="Photo gallery of campus life at Paris-Africana International School.">
+<meta name="description" content="Explore campus life and school moments at Paris-Africana International School in Mararaba, Nasarawa State.">
 <link rel="icon" href="images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#3E2415">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery | Paris-Africana International School">
+<meta property="og:description" content="Explore campus life and school moments at Paris-Africana International School in Mararaba, Nasarawa State.">
+<meta property="og:image" content="images/logo.png">
+<link rel="canonical" href="gallery.html">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="topbar">
   <div class="container">
@@ -31,21 +38,23 @@
         <span class="school-motto">Knowledge and Discipline</span>
       </span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="main-navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="academics.html">Academics</a>
       <a href="gallery.html">Gallery</a>
       <a href="news.html">News</a>
       <a href="contact.html">Contact</a>
+      <a href="admissions.html">Admissions</a>
       <a href="contact.html" class="btn btn-primary">Apply Now</a>
     </nav>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
+<main id="main-content">
 <div class="page-header">
   <div class="container">
     <h1>Gallery</h1>
@@ -57,37 +66,39 @@
   <div class="container">
     <div class="section-head">
       <h2>Campus life</h2>
-      <p>A look at life on campus — swap these placeholders for real photos whenever you're ready.</p>
+      <p>A look at life on campus — this layout is ready for the school's real photographs.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item" style="background:linear-gradient(135deg,#7A4E2D,#5C2A82);">
+      <div class="gallery-item gallery-tone-1">
         <span class="icon">🏫</span>
         Add photo: School building / entrance
       </div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#1B6B45,#000000);">
+      <div class="gallery-item gallery-tone-2">
         <span class="icon">📚</span>
         Add photo: Classroom in session
       </div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#D98A2B,#5A3A20);">
+      <div class="gallery-item gallery-tone-3">
         <span class="icon">⚽</span>
         Add photo: Sports / assembly ground
       </div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#5C2A82,#7A4E2D);">
+      <div class="gallery-item gallery-tone-4">
         <span class="icon">🎨</span>
         Add photo: Creative arts / clubs
       </div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#000000,#1B6B45);">
+      <div class="gallery-item gallery-tone-5">
         <span class="icon">🎓</span>
         Add photo: Graduation / prize-giving
       </div>
-      <div class="gallery-item" style="background:linear-gradient(135deg,#5A3A20,#D98A2B);">
+      <div class="gallery-item gallery-tone-6">
         <span class="icon">🧑‍🏫</span>
         Add photo: Teachers &amp; staff
       </div>
     </div>
-    <p class="gallery-note">These tiles are placeholders. Replace each one with a real photo by adding an <code>&lt;img&gt;</code> tag inside <code>images/gallery/</code> — instructions are in the project README.</p>
+    <p class="gallery-note">These visual panels are intentional placeholders until the school's real campus photographs are supplied. The layout is ready for a real photo gallery and lightbox in the next content pass.</p>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container">
@@ -99,8 +110,8 @@
         </div>
         <p>Knowledge and Discipline — a Nursery-to-Secondary school in Mararaba, Nasarawa State, Nigeria.</p>
         <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank">f</a>
-          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank">ig</a>
+          <a href="https://www.facebook.com/profile.php?id=61587817334590" aria-label="Facebook" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com/parisafricana.intlschool?stkn=aXF4dzJyN3Zla2s2" aria-label="Instagram" target="_blank" rel="noopener noreferrer">ig</a>
         </div>
       </div>
       <div>
@@ -115,6 +126,7 @@
       <div>
         <h4>Admissions</h4>
         <ul class="footer-links">
+          <li><a href="admissions.html">Admissions</a></li>
           <li><a href="contact.html">Book a Visit</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
