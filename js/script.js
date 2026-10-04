@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ---- Mobile nav toggle ---- */
   var toggle = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
+  var navbar = document.querySelector(".navbar");
 
   if (toggle && links) {
     var setMenuState = function (open) {
       links.classList.toggle("open", open);
+      links.setAttribute("aria-hidden", String(window.innerWidth <= 720 && !open));
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+      document.body.classList.toggle("menu-open", open);
     };
 
     setMenuState(false);
@@ -27,10 +30,26 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    document.addEventListener("click", function (event) {
+      if (links.classList.contains("open") &&
+          navbar &&
+          !navbar.contains(event.target)) {
+        setMenuState(false);
+      }
+    });
+
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && links.classList.contains("open")) {
         setMenuState(false);
         toggle.focus();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 720 && links.classList.contains("open")) {
+        setMenuState(false);
+      } else {
+        links.setAttribute("aria-hidden", String(window.innerWidth <= 720 && !links.classList.contains("open")));
       }
     });
   }
